@@ -2,6 +2,10 @@
 
 Self-hosted notification dispatch: one API call, multi-channel delivery (Email, SMS, Webhook, SSE).
 
+## Cursor rules
+
+Agent conventions live in `.cursor/rules/` (stack, structure, decisions, testing, docs, git, hygiene). After changes, agents run a hygiene sweep and **flag** gaps rather than fixing them without your say-so.
+
 ## Documentation
 
 | Doc | Purpose |

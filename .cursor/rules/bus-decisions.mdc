@@ -18,4 +18,4 @@ Decision entry format:
 Before implementing anything non-trivial, ask: "Has this decision been logged in DECISIONS.md?"
 If not, write the DECISIONS.md entry first, then implement.
 
-Next D-number starts at D-001 for this project.
+Next D-number: read `docs/DECISIONS.md` and append the next sequential entry (currently after the latest D-XXX). Never reuse or skip numbers.

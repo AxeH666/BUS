@@ -1,0 +1,40 @@
+---
+description: Post-change repo hygiene sweep — compatibility check and gap flags
+globs: ["**/*"]
+alwaysApply: true
+---
+
+# Repo Hygiene Sweep
+
+After every code, config, test, or documentation change, run a **clean sweep** before finishing the task.
+
+## What to do
+
+1. **Check compatibility** across:
+   - `src/` ↔ `tests/` (strict mirror)
+   - `src/config.py` ↔ `docs/CONFIGURATION.md` ↔ `.env.example`
+   - `docs/API.md` ↔ `src/api/routes/`
+   - `docs/CHANNELS.md` ↔ `src/channels/`
+   - `docs/ARCHITECTURE.md` ↔ stack in `.cursor/rules/bus-core.mdc`
+   - `docs/DECISIONS.md` ↔ implemented components (D-number logged before logic)
+   - `requirements.txt` ↔ imports in `src/`
+   - `.github/workflows/ci.yml` ↔ how tests and deps are run
+   - `.cursor/rules/` ↔ project conventions
+
+2. **Report findings** in the final response under a **Hygiene sweep** section:
+   - **Aligned** — what was verified OK
+   - **Gaps / flags** — inconsistencies or missing pieces (file + one-line description)
+
+3. **Do not fix flagged items on your own.** Surface them and wait for explicit user instruction before changing docs, deps, scaffolds, or cursor rules beyond what the current task required.
+
+## Exceptions (allowed without asking)
+
+- Changes explicitly requested in the current user message
+- Append-only updates to `docs/DECISIONS.md` when implementing a new component (per `bus-decisions.mdc`)
+- Fixing a breakage you introduced in the same task (e.g. failing tests, syntax errors)
+
+## Related rules
+
+- `bus-docs.mdc` — do not silently rewrite docs; use **DOCS UPDATE NEEDED:** flags during the sweep
+- `bus-decisions.mdc` — log D-XXX before non-trivial implementation
+- `bus-structure.mdc` — required directories and mirror layout
