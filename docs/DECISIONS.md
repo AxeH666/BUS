@@ -21,3 +21,8 @@ Trade-offs: Adds pydantic-settings dependency. Channel creds not validated until
 Decision: Use SQLAlchemy async engine with asyncpg driver. Session factory via async_sessionmaker. Engine reads DATABASE_URL from settings.
 Reason: Async-first from the start. No sync/async mixing later.
 Trade-offs: asyncpg adds a dependency. Required for FastAPI async routes.
+
+## D-005 | 2026-05-27 | Implement GET /health endpoint
+Decision: Health check pings PostgreSQL and Redis, returns status of each plus overall status.
+Reason: Alpha users need a way to verify the server is alive before debugging sessions.
+Trade-offs: Adds DB and Redis calls on every health check — acceptable for low-frequency ops.

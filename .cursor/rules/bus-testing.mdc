@@ -16,3 +16,4 @@ No implementation is complete without a test scaffold.
 
 Use pytest-asyncio for async functions.
 Use pytest fixtures for database and Redis setup — never hardcode connection strings in tests.
+After changes, run the hygiene sweep in `bus-hygiene.mdc` and flag doc or dependency gaps.
