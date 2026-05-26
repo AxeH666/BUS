@@ -1,0 +1,1 @@
+"""GET /logs route handler."""
