@@ -1,0 +1,1 @@
+"""POST /notify route handler."""
