@@ -1,0 +1,18 @@
+---
+description: Testing rules for Python files
+globs: ["**/*.py"]
+alwaysApply: false
+---
+
+# Testing Rules
+
+Every new Python module in `src/` must have a corresponding test file in `tests/`.
+Test file naming: if `src/channels/email.py` exists, then `tests/channels/test_email.py` must exist.
+
+Testing framework: pytest only.
+Never use unittest directly.
+Every new function that contains logic must have at least one test.
+No implementation is complete without a test scaffold.
+
+Use pytest-asyncio for async functions.
+Use pytest fixtures for database and Redis setup — never hardcode connection strings in tests.

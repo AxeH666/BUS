@@ -1,0 +1,20 @@
+---
+description: Git discipline rules
+globs: ["**/*"]
+alwaysApply: true
+---
+
+# Git Rules
+
+Never push directly to main. Main is protected.
+Always work on a feature branch.
+Branch naming: feature/D-XXX-short-description
+
+Never commit:
+- .env files
+- __pycache__/
+- *.pyc
+- Any file containing secrets or API keys
+
+Every PR must reference a D-number from DECISIONS.md.
+Never auto-merge. Always wait for CI to pass.

@@ -1,0 +1,21 @@
+---
+description: Decision logging before implementation
+globs: ["**/*"]
+alwaysApply: true
+---
+
+# Decision Logging Rules
+
+No code may be written for a new component or architectural choice until a decision entry exists in `docs/DECISIONS.md`.
+
+Decision entry format:
+- D-XXX: Title
+- Date
+- Decision made
+- Reason
+- Trade-offs considered
+
+Before implementing anything non-trivial, ask: "Has this decision been logged in DECISIONS.md?"
+If not, write the DECISIONS.md entry first, then implement.
+
+Next D-number starts at D-001 for this project.

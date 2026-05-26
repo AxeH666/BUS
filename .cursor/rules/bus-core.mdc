@@ -1,0 +1,22 @@
+---
+description: Locked technology stack for BUS
+globs: ["**/*"]
+alwaysApply: true
+---
+
+# Core Stack Rules
+
+The stack for this project is locked. Never suggest alternatives.
+
+- API layer: FastAPI only
+- Task queue: Dramatiq + Redis broker only
+- Database: PostgreSQL only
+- ORM: SQLAlchemy async only
+- Migrations: Alembic only
+- Deployment: Docker Compose only
+- Language: Python 3.11+
+- SMS provider: MSG91 only (not Twilio)
+- Email: SMTP only (no third-party email SDKs)
+
+Never introduce new dependencies without an explicit instruction from the user.
+Always check `docs/DECISIONS.md` before suggesting any architectural change.

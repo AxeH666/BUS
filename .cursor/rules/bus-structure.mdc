@@ -1,0 +1,22 @@
+---
+description: Project structure rules
+globs: ["**/*"]
+alwaysApply: true
+---
+
+# Project Structure Rules
+
+All application code lives in `src/`.
+All tests live in `tests/` and must mirror the `src/` structure exactly.
+Never create files outside these directories without explicit instruction.
+
+Required top-level structure:
+- src/         → all application code
+- tests/       → mirrors src/ exactly
+- docs/        → markdown documentation only
+- .github/     → CI and issue templates
+- docker/      → Dockerfiles and Compose files
+- scripts/     → setup, healthcheck, dev utilities
+
+Never create nested `src/src/` or `tests/tests/` structures.
+Never place test files inside `src/`.
