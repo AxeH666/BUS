@@ -5,7 +5,9 @@
 cp .env.example .env
 # Set required vars: DATABASE_URL, REDIS_URL, SECRET_KEY
 # Add SMTP / MSG91 vars only if you use those channels
-docker compose up -d
+
+# Docker Compose (once docker/docker-compose.yml exists):
+docker compose -f docker/docker-compose.yml up -d
 ```
 
 ## Services

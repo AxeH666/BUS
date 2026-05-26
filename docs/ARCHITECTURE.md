@@ -21,7 +21,7 @@ Client → POST /notify → FastAPI → Dramatiq Queue (Redis) → Worker → Ch
 - Email: SMTP
 - SMS: MSG91
 - Webhook: HTTP POST to user-defined URL
-- Push: SSE stream
+- SSE: Server-sent events stream (`GET /stream/{client_id}`)
 
 ## Ports
 - API: 8000
