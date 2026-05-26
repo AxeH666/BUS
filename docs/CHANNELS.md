@@ -1,5 +1,7 @@
 # Channels
 
+Channel credentials are optional at startup (see `docs/CONFIGURATION.md`). Each channel validates its own settings when invoked.
+
 ## Email (SMTP)
 Credentials: SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD
 Test: Send to a real inbox and verify delivery.

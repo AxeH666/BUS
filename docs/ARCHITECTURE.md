@@ -8,7 +8,11 @@ Single API call → multi-channel delivery (Email, SMS, Webhook, SSE).
 - Queue: Dramatiq + Redis
 - Database: PostgreSQL + SQLAlchemy async
 - Migrations: Alembic
+- Configuration: pydantic-settings (`src/config.py`)
 - Deployment: Docker Compose
+
+## Configuration
+`src/config.py` exposes a module-level `settings` object (`Settings` via `pydantic-settings`). Core vars (`DATABASE_URL`, `REDIS_URL`, `SECRET_KEY`) are required at startup; channel credentials are optional until those channels are used. See `docs/CONFIGURATION.md`.
 
 ## Data Flow
 Client → POST /notify → FastAPI → Dramatiq Queue (Redis) → Worker → Channel Handler → Delivery Log (PostgreSQL)
