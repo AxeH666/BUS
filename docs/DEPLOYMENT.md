@@ -11,10 +11,12 @@ source .venv/bin/activate && pip install -r requirements.txt
 uvicorn src.main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
+`bus-db` is published on host port **5433** (not 5432) so BUS does not collide with a local PostgreSQL install. Use `DATABASE_URL=...@localhost:5433/bus` (see `.env.example`).
+
 ## Services
 - bus-api: FastAPI application (`src/main.py`, port 8000)
 - bus-worker: Dramatiq worker (planned)
-- bus-db: PostgreSQL (`docker/docker-compose.yml`)
+- bus-db: PostgreSQL (`docker/docker-compose.yml`, host port 5433)
 - bus-redis: Redis (`docker/docker-compose.yml`)
 
 ## Production Checklist

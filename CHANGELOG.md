@@ -10,3 +10,4 @@
 - Add `README.md`, `docker/docker-compose.yml` (Postgres + Redis), `scripts/` scaffold; expand `.gitignore`
 - Cursor: `bus-hygiene.mdc` post-change sweep rule
 - Tests: `test_config`, `test_database`, `test_health`, `test_main`, `test_router`; conftest test env defaults
+- Docker: map Postgres to host port 5433 to avoid conflict with system PostgreSQL on 5432

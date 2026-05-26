@@ -3,7 +3,7 @@
 All configuration is via environment variables, loaded by `src/config.py` using `pydantic-settings` (`Settings` / `settings`).
 
 ## Required
-- DATABASE_URL
+- DATABASE_URL — local Docker default: `postgresql+asyncpg://bus:bus@localhost:5433/bus` (host port 5433; see `docker/docker-compose.yml`)
 - REDIS_URL
 - SECRET_KEY
 

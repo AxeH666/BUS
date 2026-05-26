@@ -31,5 +31,5 @@ Client → POST /notify → FastAPI → Dramatiq Queue (Redis) → Worker → Ch
 
 ## Ports
 - API: 8000
-- Redis: 6379
-- PostgreSQL: 5432
+- Redis: 6379 (host; Docker `bus-redis`)
+- PostgreSQL: 5433 on host → 5432 in `bus-db` container (avoids conflict with system Postgres on 5432)

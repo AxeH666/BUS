@@ -8,7 +8,7 @@ import pytest
 from sqlalchemy.ext.asyncio import AsyncSession
 
 # Defaults so `import src.config` succeeds during test collection
-os.environ.setdefault("DATABASE_URL", "postgresql+asyncpg://bus:bus@localhost:5432/bus_test")
+os.environ.setdefault("DATABASE_URL", "postgresql+asyncpg://bus:bus@localhost:5433/bus_test")
 os.environ.setdefault("REDIS_URL", "redis://localhost:6379/15")
 os.environ.setdefault("SECRET_KEY", "test-secret-key")
 
