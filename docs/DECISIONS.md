@@ -16,3 +16,8 @@ Trade-offs: Extra setup time. Prevents structural drift later.
 Decision: Use pydantic-settings BaseSettings to load and validate env vars. DATABASE_URL, REDIS_URL, and SECRET_KEY are required at startup; SMTP and MSG91 credentials are optional until those channels are used.
 Reason: Single source of truth. Fail fast on core deps at startup. No scattered os.environ calls.
 Trade-offs: Adds pydantic-settings dependency. Channel creds not validated until channel use.
+
+## D-004 | 2026-05-27 | Implement database.py — async SQLAlchemy engine and session
+Decision: Use SQLAlchemy async engine with asyncpg driver. Session factory via async_sessionmaker. Engine reads DATABASE_URL from settings.
+Reason: Async-first from the start. No sync/async mixing later.
+Trade-offs: asyncpg adds a dependency. Required for FastAPI async routes.

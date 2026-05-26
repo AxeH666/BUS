@@ -6,9 +6,10 @@ alwaysApply: false
 
 # Documentation Rules
 
-Never auto-edit or overwrite any file inside `docs/`.
-If documentation needs updating due to a code change, flag it explicitly with:
-"DOCS UPDATE NEEDED: [file] needs to reflect [change]"
+Never auto-edit or overwrite any file inside `docs/` unless the user explicitly asks in the current message.
+
+If documentation needs updating due to a code change, flag it in the **Hygiene sweep** (see `bus-hygiene.mdc`) with:
+`DOCS UPDATE NEEDED: [file] needs to reflect [change]`
 
 Do not silently update docs. Always surface the required change to the user first.
 DECISIONS.md is append-only — never delete or modify existing entries.
