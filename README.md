@@ -25,6 +25,8 @@ cp .env.example .env
 # Edit .env — set DATABASE_URL, REDIS_URL, SECRET_KEY
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
+docker compose -f docker/docker-compose.yml up -d
+uvicorn src.main:app --host 0.0.0.0 --port 8000 --reload
 pytest tests/ -v
 ```
 
